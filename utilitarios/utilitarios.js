@@ -3,6 +3,10 @@ function saludar(){
     let apellido=recuperarTexto("txtApellido");
     let edad=recuperarInt("txtEdad");
     let estatura=recuperarFloat("txtEstatura");
+
+    let mensaje=`Bienvenido ${nombre} ${apellido}`;
+
+    mostrarTexto("lblResultado", mensaje);
 }
 
 function recuperarTexto(idComponente){
@@ -26,4 +30,9 @@ function recuperarFloat(idComponente){
     let numeroFloat=parseFloat(valorCaja);
 
     return numeroFloat;
+}
+
+function mostrarTexto(idComponente, mensaje){
+    let cmp=document.getElementById(idComponente);
+    cmp.innerText = mensaje;
 }
