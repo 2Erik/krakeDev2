@@ -7,6 +7,8 @@ function saludar(){
     let mensaje=`Bienvenido ${nombre} ${apellido}`;
 
     mostrarTexto("lblResultado", mensaje);
+
+    mostrarImagen("imgSaludo", "./img/a.gif");
 }
 
 function recuperarTexto(idComponente){
@@ -35,4 +37,9 @@ function recuperarFloat(idComponente){
 function mostrarTexto(idComponente, mensaje){
     let cmp=document.getElementById(idComponente);
     cmp.innerText = mensaje;
+}
+
+function mostrarImagen(idComponente, rutaImg){
+    let cmp=document.getElementById(idComponente);
+    cmp.src = rutaImg;
 }
