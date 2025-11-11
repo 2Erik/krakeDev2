@@ -9,6 +9,13 @@ function saludar(){
     mostrarTexto("lblResultado", mensaje);
 
     mostrarImagen("imgSaludo", "./img/a.gif");
+
+    mostrarTextoCaja("txtNombre", "");
+}
+
+function mostrarTextoCaja(idComponente, mensaje){
+    let cmp=document.getElementById(idComponente);
+    cmp.value = mensaje;
 }
 
 function recuperarTexto(idComponente){
