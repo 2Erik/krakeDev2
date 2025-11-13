@@ -1,37 +1,31 @@
-function mostrarTextoCaja(idComponente, mensaje){
-    let cmp=document.getElementById(idComponente);
-    cmp.value = mensaje;
+recuperarTexto=function(idComponente){
+    let cmpTexto;
+    let valor;
+    cmpTexto=document.getElementById(idComponente);
+    valor=cmpTexto.value;
+    return valor;
 }
-
-function recuperarTexto(idComponente){
-    let cmp;
-    let valorIngresado;
-    cmp=document.getElementById(idComponente);
-    valorIngresado=cmp.value;
-
-    return valorIngresado;
+recuperarEntero=function(idComponente){
+    let valor;
+    let valorEntero;
+    valor=recuperarTexto(idComponente);
+    valorEntero=parseInt(valor);
+    return valorEntero;
 }
-
-function recuperarInt(idComponente){
-    let valorCaja=recuperarTexto(idComponente);
-    let numeroEntero=parseInt(valorCaja);
-
-    return numeroEntero;
+recuperarFlotante=function(idComponente){
+    let valor;
+    let valorFloat;
+    valor=recuperarTexto(idComponente);
+    valorFloat=parseFloat(valor);
+    return valorFloat;
 }
-
-function recuperarFloat(idComponente){
-    let valorCaja=recuperarTexto(idComponente);
-    let numeroFloat=parseFloat(valorCaja);
-
-    return numeroFloat;
+cambiarTexto=function(idComponente,mensaje){
+    let componente;
+    componente=document.getElementById(idComponente);
+    componente.innerText=mensaje;
 }
-
-function mostrarTexto(idComponente, mensaje){
-    let cmp=document.getElementById(idComponente);
-    cmp.innerText = mensaje;
-}
-
-function mostrarImagen(idComponente, rutaImg){
-    let cmp=document.getElementById(idComponente);
-    cmp.src = rutaImg;
+cambiarImagen=function(idComponente,imagen){
+    let componente;
+    componente=document.getElementById(idComponente);
+    componente.src=imagen;
 }

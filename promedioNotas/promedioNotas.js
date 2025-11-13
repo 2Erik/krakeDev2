@@ -1,12 +1,27 @@
-function calcularPromedioNotas(){
-    const nota1=recuperarFloat("txtNota1");
-    const nota2=recuperarFloat("txtNota2");
-    const nota3=recuperarFloat("txtNota3");
+calcularPromedioNotas=function(){
+    let nota1;
+    let nota2;
+    let nota3;
+    let promedio;
 
-    const promedio=calcularPromedio(nota1, nota2, nota3);
+    nota1=recuperarFlotante("txtNota1");
+    nota2=recuperarFlotante("txtNota2");
+    nota3=recuperarFlotante("txtNota3");
 
-    mostrarTexto("lblNota", promedio.toFixed(2));
+    promedio=calcularPromedio(nota1,nota2,nota3);
 
-    if(promedio>7) mostrarImagen("imgAprobado", "a.gif");
-    else mostrarImagen("imgAprobado", "b.gif");
+    cambiarTexto("lblPromedio",promedio);
+    if(promedio<5 && promedio>0){
+        cambiarTexto("lblNota","REPROBADO");
+        cambiarImagen("imgNota","mal.gif");
+    }else if(promedio>=5 && promedio <=8){
+        cambiarTexto("lblNota","BUEN TRABAJO");
+        cambiarImagen("imgNota","ok.gif");
+    }else if(promedio>8 && promedio<=10){
+        cambiarTexto("lblNota","EXELENTE");
+        cambiarImagen("imgNota","exelente.gif");
+    }else{
+        cambiarTexto("lblNota","DATOS INCORRECTOS");
+        cambiarImagen("imgNota","error.gif");
+    }
 }
