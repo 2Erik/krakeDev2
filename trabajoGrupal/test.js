@@ -3,5 +3,6 @@ function saludar(){
     const apellido=recuperarTexto("txtApellido");
 
     const saludo=generarSaludo(nombre,apellido);
+    mostrarTexto("lblResultado",saludo);
     console.log(saludo);
 }

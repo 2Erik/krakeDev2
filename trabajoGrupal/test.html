@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <head></head>
+    <head>
+        <link rel="stylesheet" href="estilos.css">
+    </head>
     <body>
         <div>
-            <input type="text" id="txtNombre">
-            <input type="text" id="txtApellido">
+            <div class="datos">
+                <h3>INGRESE EL NOMBRE</h3>
+                <div>
+                    <input type="text" id="txtNombre">
+                </div>
+                <h3>INGRESE EL APELLIDO</h3>
+                <div>
+                    <input type="text" id="txtApellido">
+                </div>
+            </div>
+            <div class="boton">
+                <input type="button" value="SALUDAR" onclick="saludar();">
+            </div>
+            <div class="resultado">
+                <h4 id="lblResultado"></h4>
+            </div>
         </div>
-        <input type="button" value="SALUDAR" onclick="saludar();">
 
         <!--SCRIPTS-->
         <script src="utilitarios.js"></script>
