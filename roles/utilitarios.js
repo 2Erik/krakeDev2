@@ -33,7 +33,7 @@ recuperarFloat = function(idComponente){
     let valorCaja= recuperarTexto(idComponente);
     let valorFlotante = parseFloat(valorCaja);
     return valorFlotante;
- }
+}
 
 mostrarComponente = function(idComponente){
     document.getElementById(idComponente).style.display = "block";
