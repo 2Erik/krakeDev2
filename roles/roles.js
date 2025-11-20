@@ -164,9 +164,7 @@ mostrarOpcionEmpleado=function(){
     mostrarEmpleados();
 
     deshabilitarCamposEmpleado();
-
 }
-
 
 deshabilitarCamposEmpleado = function() {
     deshabilitarComponente("txtCedula");
