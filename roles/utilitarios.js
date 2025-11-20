@@ -1,4 +1,3 @@
-
 mostrarImagen=function(idComponente,rutaImagen){
     let componente;
     componente=document.getElementById(idComponente);
@@ -24,9 +23,9 @@ recuperarTexto=function(idComponente){
 }
 
 recuperarInt = function(idComponente){
-   let valorCaja= recuperarTexto(idComponente);
-   let valorEntero = parseInt(valorCaja);
-   return valorEntero;
+    let valorCaja= recuperarTexto(idComponente);
+    let valorEntero = parseInt(valorCaja);
+    return valorEntero;
 }
 
 recuperarFloat = function(idComponente){
@@ -35,20 +34,20 @@ recuperarFloat = function(idComponente){
     return valorFlotante;
 }
 
-mostrarComponente = function(idComponente){
-    document.getElementById(idComponente).style.display = "block";
+esDigito=function(caracter){
+    if(caracter.charCodeAt(0)>=48 && caracter.charCodeAt(0)<=57){
+        return true;
+    }else{
+        return false;
+    }
 }
 
-ocultarComponente = function(idComponente){
-    document.getElementById(idComponente).style.display = "none";
-}
-
-deshabilitarComponente = function(idComponente){
-    document.getElementById(idComponente).disabled = true;
-}
-
-habilitarComponente = function(idComponente){
-    document.getElementById(idComponente).disabled = false;
+esMayuscula=function(caracter,indice){
+    if(caracter.charCodeAt(indice)>=65 && caracter.charCodeAt(indice)<=90){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 recuperarTextoDiv=function(idComponente){
@@ -69,4 +68,20 @@ recuperarIntDiv=function(idComponente){
     let valorCaja= recuperarTextoDiv(idComponente);
     let valorEntero = parseInt(valorCaja);
     return valorEntero;
+}
+
+mostrarComponente = function(idComponente){
+    document.getElementById(idComponente).style.display = "block";
+}
+
+ocultarComponente = function(idComponente){
+    document.getElementById(idComponente).style.display = "none";
+}
+
+deshabilitarComponente = function(idComponente){
+    document.getElementById(idComponente).disabled = true;
+}
+
+habilitarComponente = function(idComponente){
+    document.getElementById(idComponente).disabled = false;
 }
