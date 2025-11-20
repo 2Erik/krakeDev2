@@ -238,5 +238,55 @@ calcularRol=function(){
     }
 }
 
+buscarRol=function(cedula){
+    for(let i; i<roles.length;i++){
+        if(roles[i].cedula === cedula){
+            return roles[1];
+        }
+    }
+    return null;
+}
+
+agregarRol = function(rol){
+    for(let i=0;i<roles.length;i++){
+        if(roles[i].cedula === rol.cedula){
+            alert(`El rol del empleado ${rol.nombre} con cedula ${rol.cedula} ya existe`);
+            return;
+        }
+    }
+    roles.push(rol);
+    alert("Rol agregado con exito");
+}
+
+calcularAporteEmpleador=function(sueldo){
+    let aporteEmpleador = 0.1115;
+    return aporteEmpleador * sueldo;
+}
+
+guardarRol=function(){
+    let cedula = recuperarTextoDiv("infoCedula");
+    let nombre = recuperarTextoDiv("infoNombre");
+    let sueldo = recuperarFloatDiv("infoSueldo");
+    let descuento = recuperarFloat("txtDescuentos");
+    let aporteEmpleador;
+    let aporteEmpleado;
+    let valorAPagar;
+    let rol={};
+
+    aporteEmpleador=calcularAporteEmpleador(sueldo);
+    aporteEmpleado=calcularAporteEmpleado(sueldo);
+    valorAPagar=calcularValorAPagar(sueldo,aporteEmpleado,descuento);
+    
+    rol.cedula=cedula;
+    rol.nombre=nombre;
+    rol.sueldo=sueldo;
+    rol.valorAPagar=valorAPagar;
+    rol.aporteEmpleado=aporteEmpleado;
+    rol.aporteEmpleador=aporteEmpleador;
+
+    agregarRol(rol);
+
+    deshabilitarComponente("btnGuardarRol");
+}
 
 
