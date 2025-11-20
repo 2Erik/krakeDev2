@@ -212,5 +212,31 @@ buscarPorRol = function(){
     }
 }
 
+calcularAporteEmpleado=function(sueldoEmpleado){
+    let porcentajeAporte = 0.0945;
+    return porcentajeAporte * sueldoEmpleado;
+}
+
+calcularValorAPagar=function(sueldoEmpleado,aporteIEES,descuento){
+    return sueldoEmpleado-aporteIEES-descuento;
+}
+
+calcularRol=function(){
+    let sueldo = recuperarFloatDiv("infoSueldo");
+    let descuento = recuperarFloat("txtDescuentos");
+    let aporteempleado;
+    let valorAPagar;
+
+    if(descuento<0 || descuento>sueldo){
+        mostrarTexto("lblErrorDescuentos",`El descuento debe estar en el rando de 0 y ${sueldo}`);
+    }else{
+        aporteempleado = calcularAporteEmpleado(sueldo);
+        valorAPagar = calcularValorAPagar(sueldo,aporteempleado,descuento);
+        mostrarTexto("infoIESS",aporteempleado);
+        mostrarTexto("infoPago",valorAPagar);
+        habilitarComponente("btnGuardarRol");
+    }
+}
+
 
 

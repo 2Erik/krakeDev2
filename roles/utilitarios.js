@@ -50,3 +50,23 @@ deshabilitarComponente = function(idComponente){
 habilitarComponente = function(idComponente){
     document.getElementById(idComponente).disabled = false;
 }
+
+recuperarTextoDiv=function(idComponente){
+    let componente;
+    let valorObtenido;
+    componente=document.getElementById(idComponente);
+    valorObtenido=componente.textContent;
+    return valorObtenido;
+}
+
+recuperarFloatDiv=function(idComponente){
+    let valorCaja= recuperarTextoDiv(idComponente);
+    let valorFlotante = parseFloat(valorCaja);
+    return valorFlotante;
+}
+
+recuperarIntDiv=function(idComponente){
+    let valorCaja= recuperarTextoDiv(idComponente);
+    let valorEntero = parseInt(valorCaja);
+    return valorEntero;
+}
