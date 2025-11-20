@@ -6,7 +6,7 @@ let empleados = [
 
 let esNuevo=false;
 
-ejecutarBusqueda = function(){
+ejecutarBusqueda = function(){         //Funcion para comapo Rol de pagos 
     let cedula=recuperarTexto("txtBusquedaCedula");
 
     let empleadoEncontrado=buscarEmpleado(cedula);
@@ -182,22 +182,12 @@ habilitarCamposEmpleado = function() {
     habilitarComponente("btnGuardar");
 }
 
-limpiarCajasDeTexto=function(){
-    mostrarTextoEnCaja("txtCedula","");
-    mostrarTextoEnCaja("txtNombre","");
-    mostrarTextoEnCaja("txtApellido","");
-    mostrarTextoEnCaja("txtSueldo","");
-    deshabilitarCamposEmpleado();
-    esNuevo = false;
-}
-
 limpiarErrores=function(){
     mostrarTexto("lblErrorCedula","");
     mostrarTexto("lblErrorNombre","");
     mostrarTexto("lblErrorApellido","");
     mostrarTexto("lblErrorSueldo","");
 }
-
 
 
 
