@@ -198,6 +198,19 @@ limpiarCajasDeTexto=function(){
     esNuevo = false;
 }
 
+buscarPorRol = function(){
+    let buscarCedulaRol = recuperarTexto("txtBusquedaCedulaRol");
+
+    let empleadoRol=buscarEmpleado(buscarCedulaRol);
+
+    if(empleadoRol==null){
+        alert("EL EMPLEADO NO EXISTE");
+    }else{
+        mostrarTexto("infoCedula",empleadoRol.cedula);
+        mostrarTexto("infoNombre",`${empleadoRol.nombre} ${empleadoRol.apellido}`);
+        mostrarTexto("infoSueldo",empleadoRol.sueldo);
+    }
+}
 
 
 
